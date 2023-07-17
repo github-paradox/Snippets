@@ -1,0 +1,46 @@
+// To apply Binary Search Using Recursion based on 2 Parameters
+//Method Header static int Recursion(int arr[],int target,int low,int high)
+//Prefer 4 Parameter method
+import java.util.Scanner;
+
+
+
+class RecursionBinary
+{
+    static int l,h,mid;
+    public static void main(String[] args)
+     {
+        Scanner sc=new Scanner(System.in);
+        int n,target;
+        System.out.println("Enter the number of elements");
+        n=sc.nextInt();
+        int arr[]=new int[n];
+
+        System.out.println("Enter the Array Elements");
+        for(int i=0;i<n;i++)
+        arr[i]=sc.nextInt();
+
+        h=arr.length-1;
+        System.out.println("Enter the Element to be found");
+        target=sc.nextInt();
+
+        if(Recursion(arr,target)!=-1)
+        System.out.println("Element found at "+Recursion(arr,target));
+        else
+        System.out.println("Element Not found");
+    }
+     
+    static int Recursion(int[] arr, int target)
+     {
+        mid=(l+h)/2;
+        if(arr[mid]==target)
+        return mid;
+        else if(target>arr[mid])
+        l=mid+1;
+        else 
+        h=mid-1;
+        if(l<=h)
+        return Recursion(arr,target);
+        return -1;
+    }
+}
