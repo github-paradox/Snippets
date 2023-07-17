@@ -33,3 +33,5 @@ class BS
         System.out.println("Not found");       
     }
 }
+
+In Decending just change the operators
