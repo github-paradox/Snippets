@@ -3,8 +3,6 @@
 //Prefer 4 Parameter method
 import java.util.Scanner;
 
-
-
 class RecursionBinary
 {
     static int l,h,mid;
