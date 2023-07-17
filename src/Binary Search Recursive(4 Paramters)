@@ -1,0 +1,45 @@
+//To find an element using Binary Search 
+// 4 Parameters are used ir here low and high are also passed 
+// It is done to maintain the rule of not holding value i.e not using static variables 
+// In 2 Parameters method we use static variables to hold value even after each iterations
+// Which is not the rule as per Recursion
+import java.util.Scanner;
+
+
+class RecursionBinary
+{
+    public static void main(String[] args)
+     {
+        Scanner sc=new Scanner(System.in);
+        int n,target;
+        System.out.println("Enter the number of elements");
+        n=sc.nextInt();
+        int arr[]=new int[n];
+
+        System.out.println("Enter the Array Elements");
+        for(int i=0;i<n;i++)
+        arr[i]=sc.nextInt();
+
+        System.out.println("Enter the Element to be found");
+        target=sc.nextInt();
+        int ans=Recursion(arr, target, 0, arr.length-1);
+        if(ans!=-1)
+        System.out.println("Element found at "+ans);
+        else
+        System.out.println("Element Not found");
+    }
+     
+    static int Recursion(int[] arr, int target,int low,int high)
+     {
+       int mid=(low+high)/2;
+        if(arr[mid]==target)
+        return mid;
+        else if(target>arr[mid])
+        low=mid+1;
+        else 
+        high=mid-1;
+        if(low<=high)
+        return Recursion(arr,target,low,high);
+        return -1;
+    }
+}
