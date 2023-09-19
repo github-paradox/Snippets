@@ -125,6 +125,7 @@ void Revering()      // Reversing List using Links
 {
    node *temp1,*prev,*temp2=head->link;
    prev=temp1=head;
+    temp=head;
    while(temp2!=NULL)
    {
       temp1=temp2;
